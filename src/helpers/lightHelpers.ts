@@ -1,9 +1,16 @@
 import * as THREE from "three";
-import { hemisphereLight } from "../lights";
+import { directionalLight, hemisphereLight, pointLight } from "../lights";
 
 const hemisphereLightHelper = new THREE.HemisphereLightHelper(
   hemisphereLight,
   0.1
 );
 
-export { hemisphereLightHelper };
+const directionalLightHelper = new THREE.DirectionalLightHelper(
+  directionalLight,
+  0.1
+);
+
+const pointLightHelper = new THREE.PointLightHelper(pointLight);
+
+export { hemisphereLightHelper, directionalLightHelper, pointLightHelper };

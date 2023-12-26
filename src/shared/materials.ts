@@ -1,8 +1,22 @@
 import * as THREE from "three";
-import { woodTexture } from "./textures";
+import {
+  bakedShadowTexture,
+  simpleShadowTexture,
+  woodTexture,
+} from "./textures";
 const woodMaterial = new THREE.MeshStandardMaterial({
   map: woodTexture,
 });
 woodMaterial.side = THREE.DoubleSide;
 
-export { woodMaterial };
+const floorMaterial = new THREE.MeshBasicMaterial({
+  map: bakedShadowTexture,
+});
+
+const simpleShadowMaterial = new THREE.MeshBasicMaterial({
+  color: "black",
+  alphaMap: simpleShadowTexture,
+  transparent: true,
+});
+
+export { woodMaterial, floorMaterial, simpleShadowMaterial };

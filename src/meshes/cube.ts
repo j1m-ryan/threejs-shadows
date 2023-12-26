@@ -20,6 +20,8 @@ const geometry = new THREE.BoxGeometry(
 );
 
 const cube = new THREE.Mesh(geometry, woodMaterial);
+cube.castShadow = true;
+
 cubeFolder.add(cube.position, "y").min(-3).max(3).step(0.1).name("elevation");
 
 cubeFolder
